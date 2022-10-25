@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.proyecto.Security.jwt;
 
 import com.proyecto.proyecto.Security.Entity.UsuarioPrincipal;
@@ -15,7 +19,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-/** * @author Antonella  */
 @Component
 public class JwtProvider {
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);

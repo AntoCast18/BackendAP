@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.proyecto.Security.Controller;
 
 import com.proyecto.proyecto.Security.Dto.JwtDto;
@@ -28,12 +33,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * * @author Antonella se comunica con el front
- */
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://mgbfrontend.web.app")
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -85,8 +88,9 @@ public class AuthController {
         
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         
-        JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(),userDetails.getAuthorities());
+        JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
         
         return new ResponseEntity(jwtDto, HttpStatus.OK);
     }
- }
+    
+}

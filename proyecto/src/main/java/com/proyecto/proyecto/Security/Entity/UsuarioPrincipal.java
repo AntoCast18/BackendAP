@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.proyecto.Security.Entity;
 
 import java.util.Collection;
@@ -7,16 +12,19 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+/**
+ *
+ * @author Usuario
+ */
+public class UsuarioPrincipal implements UserDetails {
 
-/** * @author Antonella  */
-public class UsuarioPrincipal implements UserDetails{
     private String nombre;
     private String nombreUsuario;
     private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    //contructores
+    //Constructor
     public UsuarioPrincipal(String nombre, String nombreUsuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;

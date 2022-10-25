@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.proyecto.Security.Entity;
 
 import java.util.HashSet;
@@ -13,12 +18,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
-
-/**  @author Antonella  */
 @Entity
-public class Usuario{
+public class Usuario {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
     private String nombre;
@@ -29,12 +32,13 @@ public class Usuario{
     private String email;
     @NotNull
     private String password;
-    @ManyToMany(fetch = FetchType.EAGER )
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name ="usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
-       
-    //constructor
-    public Usuario() {        
+    
+    //Constructores
+
+    public Usuario() {
     }
 
     public Usuario(String nombre, String nombreUsuario, String email, String password) {
@@ -43,7 +47,9 @@ public class Usuario{
         this.email = email;
         this.password = password;
     }
-    //getter y setter
+    
+    //Getter Y Setter
+
     public int getId() {
         return id;
     }
@@ -91,6 +97,5 @@ public class Usuario{
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
-    
     
 }

@@ -1,6 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.proyecto.Security.jwt;
 
-import com.proyecto.proyecto.Security.Service.UserDatailsImpl;
+import com.proyecto.proyecto.Security.Service.UserDetailsImpl;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -15,7 +20,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * @author Antonella
+ *
+ * @author Usuario
  */
 public class JwtTokenFilter extends OncePerRequestFilter {
 
@@ -24,7 +30,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
-    UserDatailsImpl userDetailsServiceImpl;
+    UserDetailsImpl userDetailsServiceImpl;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -38,7 +44,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         } catch (Exception e) {
-            logger.error("Fail el metodo doFilterInternal");
+            logger.error("Fallí el metodo doFilterInternal");
         }
         filterChain.doFilter(request, response);
     }
