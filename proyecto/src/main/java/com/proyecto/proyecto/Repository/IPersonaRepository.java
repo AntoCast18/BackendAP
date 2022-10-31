@@ -5,6 +5,7 @@ package com.proyecto.proyecto.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.proyecto.proyecto.Entity.Persona;
+import java.util.Optional;
 
 /**
  *
@@ -12,6 +13,8 @@ import com.proyecto.proyecto.Entity.Persona;
  */
 
 @Repository
-public interface IPersonaRepository extends JpaRepository<Persona, Long>{
-    
+public interface IPersonaRepository extends JpaRepository<Persona, Integer>{
+        public Optional<Persona> findByNombre(String nombre);
+    public boolean existsByNombre(String nombre);
+
 }
