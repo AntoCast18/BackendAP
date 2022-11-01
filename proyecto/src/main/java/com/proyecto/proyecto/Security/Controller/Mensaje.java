@@ -5,10 +5,7 @@
  */
 package com.proyecto.proyecto.Security.Controller;
 
-/**
- *
- * @author Usuario
- */
+/** */
 public class Mensaje {
     private String mensaje;
     
