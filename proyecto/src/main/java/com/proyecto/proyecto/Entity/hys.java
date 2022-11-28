@@ -1,4 +1,3 @@
-
 package com.proyecto.proyecto.Entity;
 
 import javax.persistence.Entity;
@@ -12,6 +11,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class hys {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -50,7 +50,4 @@ public class hys {
         this.porcentaje = porcentaje;
     }
 
-    
-    
-    
 }
